@@ -35,7 +35,7 @@
         <label for="rating">
           3. Overall Satisfaction with Police Service(1-5) :
         </label>
-        <input
+        <!-- <input
           type="number"
           name="rating"
           id="rating"
@@ -44,7 +44,14 @@
           step="1"
           placeholder="Enter a number between 1 and 5"
           required
-        />
+        /> -->
+        <select name="rating" id="rating">
+            <option value="1">1 - Very Dissatisfied</option>
+            <option value="2">2 - Dissatisfied</option>
+            <option value="3">3 - Neutral</option>
+            <option value="4">4 - Satisfied</option>
+            <option value="5">5 - Very Satisfied</option>
+        </select>
       </div>
 
       <div>
@@ -57,7 +64,7 @@
 
         <div>
           <label for="date">5. Date of Incident :</label>
-          <input type="date" name="date" id="date" required />
+          <input type="date" name="date" id="date" max="" required />
         </div>
 
         <div>
@@ -187,6 +194,19 @@
     </form>
 
     <script>
+
+    // Get today's date in the format YYYY-MM-DD
+    var today = new Date();
+    var dd = String(today.getDate()).padStart(2, '0');
+    var mm = String(today.getMonth() + 1).padStart(2, '0'); // January is 0!
+    var yyyy = today.getFullYear();
+
+    today = yyyy + '-' + mm + '-' + dd;
+
+    // Set the maximum date for the date input
+    document.getElementById('date').max = today;
+  
+
       function submitFeedback() {
         // You can add AJAX code here to send feedback to the server
         // For simplicity, we'll just log the feedback to the console
