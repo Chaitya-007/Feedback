@@ -4,28 +4,87 @@ const mongoose = require("mongoose");
 // nameing convention => camelCase 
 const userData = new mongoose.Schema(
     {
-        username:{
+        name:{
             type: String,
             // required: true,
             // min: 6,
             // max: 255
         },
-        password:{
+        email:{
             type: String,
             // required: true,
             // min: 6,
-            // max: 1024
+            // max: 255
         },
-        email:{
-            type: String,
-        },
-        age:
-        {
+        rating:{
             type: Number,
             // required: true,
             // min: 6,
-            // max: 1024
-        }
+            // max: 255
+        },
+        improvement:{
+            type: String,
+            // required: true,
+            // min: 6,
+            // max: 255
+        },
+        date:{
+            type: Date,
+            
+        },
+        time:{
+            type: String,
+            
+        },
+        location:{
+            type: String,
+            
+        },
+        officerBadge:{
+            type: String,
+            
+        },
+        officerName:{
+            type: String,
+            
+        },
+        reasonForInteraction:{
+            type: String,
+            
+        },
+        typeOfService:{
+            type: String,
+            
+        },
+        responseTime:{
+            type: String,
+            
+        },
+        communicationClarity:{
+            type: String,
+            
+        },
+        officerDemeanor:{
+            type: String,
+            
+        },
+        respectfulness:{   
+            type: String,
+            
+        },
+        demographicInfo:{
+            type: String,
+            
+        },
+        contactInfo:{
+            type: String,
+            
+        },
+        message:{
+            type: String,
+            
+        },
+
    
     }
 )

@@ -1,26 +1,213 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Feedback Taker</title>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Feedback Form</title>
     <link rel="stylesheet" href="style.css">
-</head>
-<body>
+  </head>
+  <body>
+    <form action="/formPost" id="feedbackForm" method="post">
+      <h1>Police Feedback</h1>
+
+      <div>
+        <label for="name">1. Your Name:(If you want to disclose)</label>
+        <input
+          type="text"
+          id="name"
+          name="name"
+          placeholder="Enter your full name"
+        />
+      </div>
+
+      <div>
+        <label for="email">2. Your Email:(If you want to disclose)</label>
+        <input
+          type="email"
+          id="email"
+          name="email"
+          placeholder="Enter your email here"
+          required
+        />
+      </div>
+
+      <div>
+        <label for="rating">
+          3. Overall Satisfaction with Police Service(1-5) :
+        </label>
+        <input
+          type="number"
+          name="rating"
+          id="rating"
+          min="1"
+          max="5"
+          step="1"
+          placeholder="Enter a number between 1 and 5"
+          required
+        />
+      </div>
+
+      <div>
+        <label for="improvement">4. Is there anything specific that could have improved your experience?</label>
+        <input type="text" name="improvement" id="improvement" placeholder="Enter your comment here...">
+      </div>
+
+      <div>
+        <label>Incident Details</label>
+
+        <div>
+          <label for="date">5. Date of Incident :</label>
+          <input type="date" name="date" id="date" required />
+        </div>
+
+        <div>
+          <label for="time">6. Time of Incident(24 hour system) :</label>
+          <input type="time" name="time" id="time" required />
+        </div>
+
+        <div>
+          <label for="location">7. Location of the incident:</label>
+          <input
+            type="text"
+            id="location"
+            name="location"
+            placeholder="Enter the location of the incident"
+            required
+          />
+        </div>
+      </div>
+
+      <div>
+        <label> Officer's Information(if applicable):</label>
+
+        <div>
+          <label for="officerBadge">8. Officer's Badge/Identification Number(if known):</label>
+          <input
+              type="text"
+              id="officerBadge"
+              name="officerBadge"
+              placeholder="Enter the officer's badge number"
+          />
+    </div>
+
+        <div>
+          <label for="officerName">9. Officer's Name(if known):</label>
+          <input
+              type="text"
+              id="officerName"
+              name="officerName"
+              placeholder="Enter the officer's name"
+          />
+      </div>
+      </div>
+
+
+        <div>
+          <label>Nature of Interaction:</label>
+          <div>
+            <label for="reasonForInteraction">10. Reason for interaction:</label>
+            <input type="text" name="reasonForInteraction" id="reasonForInteraction" placeholder="Enter your reason here" required>
+          </div>
+    <div>
+      <label for="typeOfService">11. Type of service received:</label>
+    <input type="text" name="typeOfService" id="typeOfService" placeholder="Enter your comment here" required>
+    </div>
+    
+        </div>
+        
+
+        <div>
+          <label>Response Time and Communication:</label>
+          <div>
+            <label for="responseTime">12. Response time:</label>
+    <input type="text" name="responseTime" id="responseTime" placeholder="Enter your comment here" required>
+          </div>
+          
+          <div>
+            <label for="communicationClarity">13. Communication clarity:</label>
+    <input type="text" name="communicationClarity" id="communicationClarity" placeholder="Enter your response here" required>
+          </div>
+        </div>
+      
+        <div>
+          <label>Professionalism and Conduct:</label>
+          <div>
+            <label for="officerDemeanor">14. Officer's demeanor:</label>
+    <input type="text" name="officerDemeanor" id="officerDemeanor" placeholder="Enter your comment here" required>
+          </div>
+
+          <div>
+            <label for="respectfulness">15. Respectfulness:</label>
+    <input type="text" name="respectfulness" id="respectfulness" placeholder="Enter your comment here" required>
+          </div>
+        </div>
     
 
-    <form action="/formPost" class="form" method="post">
+    <div>
+      <label for="followUpActions">16. Follow-up actions taken:</label>
+    <input type="text" name="followUpActions" placeholder="Enter the actions taken here" id="followUpActions" required>
+    </div>
 
-        <h1 class="heading">Feedback Form</h1>
-        <input type="text" name="username" placeholder="username" required>
+    
+<div>
+  <label for="demographicInfo">17. Demographic information (optional):</label>
+  <input type="text" name="demographicInfo" id="demographicInfo" placeholder="Optional">
+</div>
+    
+<div>
+  <label for="contactInfo">18. Anonymous or Contact Information:</label>
+  <input type="text" name="contactInfo" id="contactInfo" placeholder="Optional">
+</div>
 
-        <input type="password" name="password" placeholder="Password" required>
 
-        <input type="email" name="email" placeholder="Email" required>
+      <div>
+        <label for="message">Your Feedback:</label>
+        <textarea
+          id="message"
+          name="message"
+          rows="4"
+          placeholder="Describe your experience..."
+          required
+        ></textarea>
+      </div>
 
-        <input type="number" name="age" placeholder="Age" required>
+       <div>
+        <!-- <button type="button" onclick="submitFeedback()">Submit Feedback</button> -->
+        <button type="submit">Submit Feedback</button>
+        <button type="reset">Reset Feedback</button>
+      </div>
 
-        <button type="submit">Submit</button>
+      
+
+      <!-- <div>
+        <label for="age">Age</label>
+        <input type="number" name="age" id="age" min="18" max="100" step="1" placeholder="Enter your age here" required>
+      </div> -->
+      
     </form>
-</body>
-</html>
+
+    <script>
+      function submitFeedback() {
+        // You can add AJAX code here to send feedback to the server
+        // For simplicity, we'll just log the feedback to the console
+        const name = document.getElementById("name").value;
+        const email = document.getElementById("email").value;
+        const message = document.getElementById("message").value;
+
+        console.log("Feedback Submitted:");
+        console.log("Name: " + name);
+        console.log("Email: " + email);
+        console.log("Message: " + message);
+
+        // Reset form fields after submission
+        document.getElementById("name").value = "";
+        document.getElementById("email").value = "";
+        document.getElementById("message").value = "";
+
+        alert("Feedback submitted successfully!");
+      }
+    </script>
+  </body>
+</html> 
+
+
