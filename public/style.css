@@ -41,7 +41,7 @@ color: rgba(0, 0, 0, 0.1) - The shadow color is a semi-transparent black, where 
 
    
   input,
-  textarea {
+  textarea,select,option {
     width: 100%;
     padding: 8px;
     margin-bottom: 16px;
@@ -50,6 +50,13 @@ color: rgba(0, 0, 0, 0.1) - The shadow color is a semi-transparent black, where 
     border: 2px solid black;
     border-radius: 4px;
   }
+
+  /* Style the default option */
+  option[disabled] {
+    display: none; /* hide the default option */
+  }
+
+
 
   
   button {
