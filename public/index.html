@@ -1,235 +1,142 @@
 <!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Feedback Form</title>
-    <link rel="stylesheet" href="style.css">
-  </head>
-  <body>
-    <form action="/formPost" id="feedbackForm" method="post">
-      <h1>Police Feedback</h1>
+   <html lang="en">
+   <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-      <div>
-        <label for="name">1. Your Name:(If you want to disclose)</label>
-        <input
-          type="text"
-          id="name"
-          name="name"
-          placeholder="Enter your full name"
-        />
+      <!--=============== REMIXICONS ===============-->
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/3.5.0/remixicon.css">
+
+      <!--=============== CSS ===============-->
+      <link rel="stylesheet" href="assets/css/styles.css">
+
+      <title>Responsive navbar with search and login - Bedimcode</title>
+   </head>
+   <body>
+      <!--==================== HEADER ====================-->
+      <header class="header" id="header">
+         <nav class="nav container">
+
+            <div class="logo-container">
+                <a href="#">
+                    <img class="satyamevjay" src="assets/img/satyamevjayte.png" alt="Satyamevjayate">
+                </a>
+                <a href="#">
+                    <img class="rajpollogo" src="assets/img/rajpolicelogo.png" alt="Rajasthanpolice">
+                </a>
+            </div>            
+            <!-- <a href="#">
+                <img class="satyamevjay" src="assets/img/satyamevjayte.png" alt="Satyamevjayate"></a>
+
+            <a href="#" ><img class="rajpollogo" src="assets/img/rajpolicelogo.png" alt="Rajasthanpolice"></a> -->
+
+            <div class="nav__menu" id="nav-menu">
+               <ul class="nav__list">
+
+                
+
+                  <li class="nav__item">
+                     <a href="#" class="nav__link">Home</a>
+                  </li>
+
+                  <li class="nav__item">
+                     <a href="#" class="nav__link">About Us</a>
+                  </li>
+
+                  <li class="nav__item">
+                     <a href="#" class="nav__link">Services</a>
+                  </li>
+
+                  <li class="nav__item">
+                     <a href="./form.html" class="nav__link">Feedback</a>
+                  </li>
+
+                  <li class="nav__item">
+                    <a href="./media.html" class="nav__link">Social Media</a>
+                 </li>
+
+                  <li class="nav__item">
+                     <a href="#" class="nav__link">Contact Me</a>
+                  </li>
+               </ul>
+
+               <!-- Close button -->
+               <div class="nav__close" id="nav-close">
+                  <i class="ri-close-line"></i>
+               </div>
+            </div>
+
+            <div class="nav__actions">
+               <!-- Search button -->
+               <i class="ri-search-line nav__search" id="search-btn"></i>
+
+               <!-- Login button -->
+               <i class="ri-user-line nav__login" id="login-btn"></i>
+
+               <!-- Toggle button -->
+               <div class="nav__toggle" id="nav-toggle">
+                  <i class="ri-menu-line"></i>
+               </div>
+            </div>
+         </nav>
+      </header>
+
+      <!--==================== SEARCH ====================-->
+      <div class="search" id="search">
+         <form action="" class="search__form">
+            <i class="ri-search-line search__icon"></i>
+            <input type="search" placeholder="What are you looking for?" class="search__input">
+         </form>
+
+         <i class="ri-close-line search__close" id="search-close"></i>
       </div>
 
-      <div>
-        <label for="email">2. Your Email:(If you want to disclose)</label>
-        <input
-          type="email"
-          id="email"
-          name="email"
-          placeholder="Enter your email here"
-          required
-        />
+      <!--==================== LOGIN ====================-->
+      <div class="login" id="login">
+         <form action="" class="login__form">
+            <h2 class="login__title">Log In</h2>
+            
+            <div class="login__group">
+               <div>
+                  <label for="email" class="login__label">Email</label>
+                  <input type="email" placeholder="Write your email" id="email" class="login__input">
+               </div>
+               
+               <div>
+                  <label for="password" class="login__label">Password</label>
+                  <input type="password" placeholder="Enter your password" id="password" class="login__input">
+               </div>
+            </div>
+
+            <div>
+               <p class="login__signup">
+                  You do not have an account? <a href="#">Sign up</a>
+               </p>
+   
+               <a href="#" class="login__forgot">
+                  You forgot your password
+               </a>
+   
+               <button type="submit" class="login__button">Log In</button>
+            </div>
+         </form>
+
+         <i class="ri-close-line login__close" id="login-close"></i>
       </div>
 
-      <div>
-        <label for="rating">
-          3. Overall Satisfaction with Police Service(1-5) :
-        </label>
-        <!-- <input
-          type="number"
-          name="rating"
-          id="rating"
-          min="1"
-          max="5"
-          step="1"
-          placeholder="Enter a number between 1 and 5"
-          required
-        /> -->
-        <select name="rating" id="rating">
-            <option value="" disabled selected>Select an option</option>
-            <option value="5">5 - Very Satisfied</option>
-            <option value="4">4 - Satisfied</option>
-            <option value="3">3 - Neutral</option>
-            <option value="2">2 - Dissatisfied</option>
-            <option value="1">1 - Very Dissatisfied</option>
-        </select>
-      </div>
+      <!--==================== MAIN ====================-->
+      <main class="main">
+         <img src="assets/img/img1.png" alt="image" class="main__bg">
+      </main>
 
-      <div>
-        <label for="improvement">4. Is there anything specific that could have improved your experience?</label>
-        <input type="text" name="improvement" id="improvement" placeholder="Enter your comment here...">
-      </div>
-
-      <div>
-        <label>Incident Details</label>
-
-        <div>
-          <label for="date">5. Date of Incident :</label>
-          <input type="date" name="date" id="date" max="" required />
-        </div>
-
-        <div>
-          <label for="time">6. Time of Incident(24 hour system) :</label>
-          <input type="time" name="time" id="time" required />
-        </div>
-
-        <div>
-          <label for="location">7. Location of the incident:</label>
-          <input
-            type="text"
-            id="location"
-            name="location"
-            placeholder="Enter the location of the incident"
-            required
-          />
-        </div>
-      </div>
-
-      <div>
-        <label> Officer's Information(if applicable):</label>
-
-        <div>
-          <label for="officerBadge">8. Officer's Badge/Identification Number(if known):</label>
-          <input
-              type="text"
-              id="officerBadge"
-              name="officerBadge"
-              placeholder="Enter the officer's badge number"
-          />
-    </div>
-
-        <div>
-          <label for="officerName">9. Officer's Name(if known):</label>
-          <input
-              type="text"
-              id="officerName"
-              name="officerName"
-              placeholder="Enter the officer's name"
-          />
-      </div>
-      </div>
-
-
-        <div>
-          <label>Nature of Interaction:</label>
-          <div>
-            <label for="reasonForInteraction">10. Reason for interaction:</label>
-            <input type="text" name="reasonForInteraction" id="reasonForInteraction" placeholder="Enter your reason here" required>
-          </div>
-    <div>
-      <label for="typeOfService">11. Type of service received:</label>
-    <input type="text" name="typeOfService" id="typeOfService" placeholder="Enter your comment here" required>
-    </div>
-    
-        </div>
-        
-
-        <div>
-          <label>Response Time and Communication:</label>
-          <div>
-            <label for="responseTime">12. Response time:</label>
-    <input type="text" name="responseTime" id="responseTime" placeholder="Enter your comment here" required>
-          </div>
-          
-          <div>
-            <label for="communicationClarity">13. Communication clarity:</label>
-    <input type="text" name="communicationClarity" id="communicationClarity" placeholder="Enter your response here" required>
-          </div>
-        </div>
+      <!-- <main class="main">
+         <img src="assets/img/img1.png" alt="image" class="main__bg">
+         <img src="assets/img/img2.png" alt="image" class="main__bg">
+         <img src="assets/img/img3.png" alt="image" class="main__bg">
+     </main> -->
       
-        <div>
-          <label>Professionalism and Conduct:</label>
-          <div>
-            <label for="officerDemeanor">14. Officer's demeanor:</label>
-    <input type="text" name="officerDemeanor" id="officerDemeanor" placeholder="Enter your comment here" required>
-          </div>
-
-          <div>
-            <label for="respectfulness">15. Respectfulness:</label>
-    <input type="text" name="respectfulness" id="respectfulness" placeholder="Enter your comment here" required>
-          </div>
-        </div>
-    
-
-    <div>
-      <label for="followUpActions">16. Follow-up actions taken:</label>
-    <input type="text" name="followUpActions" placeholder="Enter the actions taken here" id="followUpActions" required>
-    </div>
-
-    
-<div>
-  <label for="demographicInfo">17. Demographic information (optional):</label>
-  <input type="text" name="demographicInfo" id="demographicInfo" placeholder="Optional">
-</div>
-    
-<div>
-  <label for="contactInfo">18. Anonymous or Contact Information:</label>
-  <input type="text" name="contactInfo" id="contactInfo" placeholder="Optional">
-</div>
-
-
-      <div>
-        <label for="message">Your Feedback:</label>
-        <textarea
-          id="message"
-          name="message"
-          rows="4"
-          placeholder="Describe your experience..."
-          required
-        ></textarea>
-      </div>
-
-       <div>
-        <!-- <button type="button" onclick="submitFeedback()">Submit Feedback</button> -->
-        <button type="submit">Submit Feedback</button>
-        <button type="reset">Reset Feedback</button>
-      </div>
-
-      
-
-      <!-- <div>
-        <label for="age">Age</label>
-        <input type="number" name="age" id="age" min="18" max="100" step="1" placeholder="Enter your age here" required>
-      </div> -->
-      
-    </form>
-
-    <script>
-
-    // Get today's date in the format YYYY-MM-DD
-    var today = new Date();
-    var dd = String(today.getDate()).padStart(2, '0');
-    var mm = String(today.getMonth() + 1).padStart(2, '0'); // January is 0!
-    var yyyy = today.getFullYear();
-
-    today = yyyy + '-' + mm + '-' + dd;
-
-    // Set the maximum date for the date input
-    document.getElementById('date').max = today;
-  
-
-      function submitFeedback() {
-        // You can add AJAX code here to send feedback to the server
-        // For simplicity, we'll just log the feedback to the console
-        const name = document.getElementById("name").value;
-        const email = document.getElementById("email").value;
-        const message = document.getElementById("message").value;
-
-        console.log("Feedback Submitted:");
-        console.log("Name: " + name);
-        console.log("Email: " + email);
-        console.log("Message: " + message);
-
-        // Reset form fields after submission
-        document.getElementById("name").value = "";
-        document.getElementById("email").value = "";
-        document.getElementById("message").value = "";
-
-        alert("Feedback submitted successfully!");
-      }
-    </script>
-    <script async='async' src='//code.tidio.co/dq699ks0spspilmp7wdqu4lxjqdhy7xk.js'></script>
-  </body>
-</html> 
-
-
+      <!--=============== MAIN JS ===============-->
+      <script src="assets/js/main.js"></script>
+      <script async='async' src='//code.tidio.co/dq699ks0spspilmp7wdqu4lxjqdhy7xk.js'></script>
+   </body>
+</html>

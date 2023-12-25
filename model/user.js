@@ -16,6 +16,9 @@ const userData = new mongoose.Schema(
             // min: 6,
             // max: 255
         },
+        phone:{
+            type: String,
+        },
         rating:{
             type: Number,
             // required: true,
@@ -84,7 +87,10 @@ const userData = new mongoose.Schema(
             type: String,
             
         },
-
+        happyornot:{
+            type: String,
+            
+        },
    
     }
 )
